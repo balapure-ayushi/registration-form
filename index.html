@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-lg-10 m-auto d-block">
+            <div class="div">
+                <img src="b1.png">
+
+
+                <form action="#" onsubmit="return validation()" class="m-4 p-4 w-full sm:w-2/3 md:w-2/3 sm:m-2 sm:p-2">
+                    <h1 class="text-2xl sm:text-lg  xl:text-3xl">Registration Form</h1><br>
+                    <div class="mb-3">
+                        <p>Your Name</p>
+                        <input type="text" name="" id="user" class="form-control" placeholder="add username"
+                            aria-describedby="helpId" autocomplete="off" required>
+                        <span id="username" class="text-danger text-center "></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Your ID</p>
+                        <input type="text" name="" id="userid" class="form-control" placeholder="Your username ID"
+                            aria-describedby="helpId" autocomplete="off" required>
+                        <span id="idout" class="text-danger text-center "></span>
+                    </div>
+
+
+
+
+                    <p>Gender</p><br>
+                    <div class="flex items-center mb-4">
+
+                        <input type="radio" id="male" name="gender" value="M"
+                            class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ">
+                        <label for="male"
+                            class="flex items-center ml-2 md:ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+                        <input type="radio" id="Female" name="gender" value="F"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ml-4">
+                        <label for="Female"
+                            class="flex items-center ml-2 md:ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Female</label>
+
+                        <input type="radio" id="other" name="gender" value="o"
+                            class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ml-4">
+                        <label for="other"
+                            class="flex items-center ml-2 md:ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Other</label>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <p>Mobile number</p>
+
+                        <input type="text" name="" id="MobileNumber" class="form-control"
+                            placeholder="Your mobile number" aria-describedby="helpId" autocomplete="off" required>
+                        <span id="mobilenumber" class="text-danger text-center "></span>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <p>Email</p>
+
+                        <input type="email" class="form-control" name="" id="emails" aria-describedby="emailHelpId"
+                            placeholder="abc@gmail.com" autocomplete="off" required>
+                        <span id="emailid" class="text-danger text-center "></span>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <p class="block text-sm mb-2">Date Of Birth</p>
+                        <input type="date" name="" id="DOJ"
+                            class="form-control w-full py-2 px-3 border rounded-md text-sm"
+                            placeholder="Enter Your Date of Birth" aria-describedby="helpId" required>
+                        <span id="dojout" class="text-danger text-sm text-center "></span>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <p>Age</p>
+                        <input type="number" name="" id="age" onmousemove="findAge()" class="form-control"
+                            placeholder="Enter your age" aria-describedby="helpId" required>
+                        <span id="agenum" class="text-danger text-center "></span>
+                    </div>
+
+
+
+
+                    <select name="mydropdown" class="w-full sm:w-40 sm:text-sm md:text-base p-2">
+                        <option value="Default">Location</option>
+                        <option >Bhopal</option>
+                        <option >Indore</option>
+                        <option >Jabalpur</option>
+                        <option >Gwalior</option>
+                        <option >kadi</option>
+                        <option >surat</option>
+                        <option >Vadodara</option>
+                        <option >junagadh</option>
+                        <option >Pune</option>
+
+
+                    </select>
+                    <br><br><br>
+                    <button type="submit"
+                        class="bg-gray-500 text-light p-2 rounded-md hover:bg-gray-700 ...">Submit</button>
+                    <button type="reset"
+                        class="bg-gray-500 text-light p-2 rounded-md hover:bg-gray-700 ...">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        
+
+        function findAge() {
+            var day = document.getElementById('DOJ').value;
+            var DOB = new Date(day);
+            var today = new Date();
+            var Age = today.getTime() - DOB.getTime();
+            Age = Math.floor(Age / (1000 * 60 * 60 * 24 * 365.25));
+            document.getElementById('age').value = Age;
+        }
+
+        function validation() {
+            var user = document.getElementById('user').value;
+            var userid = document.getElementById('userid').value;
+
+            var mono = document.getElementById('MobileNumber').value;
+            var doj = document.getElementById('DOJ').value;
+            var emails = document.getElementById('emails').value;
+            var Age = document.getElementById('age').value;
+
+            if (user == "") {
+                document.getElementById('username').innerHTML = "please add the details of username";
+                return false;
+            }
+
+            if (user.length < 5 || (userid.length > 20)) {
+                document.getElementById('username').innerHTML = "userlength is not valid";
+                return false;
+            }
+            if (!isNaN(user)) {
+                document.getElementById('username').innerHTML = "username does not accept only number";
+                return false;
+            }
+
+            if (userid == "") {
+                document.getElementById('username').innerHTML = "please add the details of username";
+                return false;
+            }
+
+            if (userid.length < 5 || (userid.length > 20)) {
+                document.getElementById('idout').innerHTML = "userlength is not valid";
+                return false;
+            }
+            if (!isNaN(userid)) {
+                document.getElementById('idout').innerHTML = "username does not accept only number";
+                return false;
+            }
+
+
+
+
+            if (mono == "") {
+                document.getElementById('mobilenumber').innerHTML = "please add mobile number";
+                return false;
+            }
+            if (isNaN(mono)) {
+                document.getElementById('mobilenumber').innerHTML = "please add a valid  mobile number(digits only)";
+                return false;
+            }
+            if (mono.length != 10) {
+                document.getElementById('mobilenumber').innerHTML = "please add a valid 10digit mobile number(digits only)";
+                return false;
+            }
+
+            if (emails == "") {
+                document.getElementById('emailid').innerHTML = "please add email-id";
+                return false;
+            }
+            if (emails.indexOf('@') <= 0) {
+                document.getElementById('emailid').innerHTML = "invalid position of @ in email-id";
+                return false;
+            }
+            if (emails.charAt(emails.length - 4) != '.') {
+                document.getElementById('emailid').innerHTML = "invalid email-id";
+                return false;
+            }
+            if (Age < 18) {
+                document.getElementById('agenum').innerHTML = "age must be above 18";
+                return false;
+            }
+            if (Age >= 100) {
+                document.getElementById('agenum').innerHTML = "age is must below 100";
+                return false;
+            }
+        }
+
+
+
+
+
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

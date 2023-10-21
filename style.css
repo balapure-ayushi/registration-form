@@ -1,0 +1,59 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 10px;
+    margin: 10px;
+    background-color: gray;
+    
+
+}
+input
+{
+    width: 35%;
+    padding: 5px;
+}
+.gender
+{
+    margin: 0;
+    padding: 0px;
+    width: 10%;
+}
+select
+{
+    width: 35%;
+    padding: 5px;
+}
+span
+{
+    
+    color: red;
+}
+
+.div
+{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.div img
+{
+    width: 50%;
+    height: 100vh;
+    
+}
+body
+
+{
+    background-image: url(back.png);
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
